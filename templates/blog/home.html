@@ -1,7 +1,38 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
 
 {% block title %}{{ BRAND_NAME }}{% endblock %}
 
-{% block content %}
+{%block content %}
 {# TODO: W1 — 아기 사자 작성 영역 #}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<main class="home-landing">
+  <section class="hero-section">
+    <div class="inner">
+      <div class="eyebrowrow">
+        <p class="eyebrow">welcome · 환영합니다</p>
+        <p class="meta">— 2026, week 18</p>
+      </div>
+      <p class="hero-title">기록하는 일이<br>성장이 되는 곳<span class="dot">.</span></p>
+      <p class="hero-text">아기사자(BL)가 매일 조금씩 적어가는 노트입니다.<br>기술, 프로젝트, 그리고 평범한 하루의 단상까지 — 천천히 쌓아 둡니다.</p>
+      <div class="hero-button">
+        <a href="#" class="recent"><span class="recent-text">최신 글 읽기 →</span></a>
+        <a href="#" class="about"><span class="about-text">about</span></a>
+        <a href="#" class="rss"><span class="rss-text">RSS</span></a>
+      </div>
+      <div class="spacer"></div>
+      <div class="metastrip">
+        <div class="now-writing">
+          <span class="ellipse"></span>
+          <span class="now-label">now writing</span>
+          <span class="now-title">디자인 토큰 시리즈 6편</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="note-section">
+
+  </section>
+</main>
+
 {% endblock %}
