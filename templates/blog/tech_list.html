@@ -1,7 +1,136 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} 
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/tech_list.css' %}" /> 
+{% endblock %}
 
 {% block title %}Tech · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# TODO: W1 — 아기 사자 작성 영역 #}
+
+<div class="main">
+    <div class="inner">
+        
+        <div class="headerrow">
+            <div class="titlestack">
+                <div class="technote"><p>TECH NOTES</p></div>
+                <div class="headtitle"><p>만들면서 배운 것들.</p></div>
+            </div>
+            <div class="searchbar">
+                <div class="searchicon"><p>⌕</p></div>
+                <div class="searchpost"><p>search posts…</p></div>
+                <div class="kbd">
+                    <div class="kbdicon"><p>⌘K</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="categoryfilter">
+            <div class="mainchip"><p class="mainlabel">All</p></div>
+            <div class="chip"><p class="label">Frontend</p></div>
+            <div class="chip"><p class="label">TypeScript</p></div>
+            <div class="chip"><p class="label">AI</p></div>
+            <div class="chip"><p class="label">Performance</p></div>
+            <div class="chip"><p class="label">Series · DS</p></div>
+        </div>
+
+        <div class="postlist">
+
+            <div class="postrow">
+                <div class="postdate"><p>2026.04.28</p></div>
+                <div class="contentcol">
+                    <div class="contecttitle"><p>손에 익는 디자인 시스템 만들기</p></div>
+                    <div class="contectdesc"><p>Designing a system that fits the hand</p></div>
+                    <div class="tagrow">
+                        <div class="mainchip"><p class="mainlabel">Frontend</p></div>
+                        <div class="chip"><p class="label">#design-system</p></div>
+                        <div class="chip"><p class="label">#tokens</p></div>
+                        <div class="chip"><p class="label">#CSS</p></div>
+                    </div>
+                </div>
+                <div class="posttime"><p>8 min</p></div>
+            </div>
+
+            <div class="postrow">
+                <div class="postdate"><p>2026.04.21</p></div>
+                <div class="contentcol">
+                    <div class="contecttitle"><p>tRPC와 함께한 1년: 좋았던 것, 불편했던 것</p></div>
+                    <div class="contectdesc"><p>A year with tRPC</p></div>
+                    <div class="tagrow">
+                        <div class="mainchip"><p class="mainlabel">TypeScript</p></div>
+                        <div class="chip"><p class="label">#trpc</p></div>
+                        <div class="chip"><p class="label">#types</p></div>
+                        <div class="chip"><p class="label">#dx</p></div>
+                    </div>
+                </div>
+                <div class="posttime"><p>6 min</p></div>
+            </div>
+
+            <div class="postrow">
+                <div class="postdate"><p>2026.04.14</p></div>
+                <div class="contentcol">
+                    <div class="contecttitle"><p>CSS Container Queries, 결국 쓰게 되더라</p></div>
+                    <div class="contectdesc"><p>I came around to container queries</p></div>
+                    <div class="tagrow">
+                        <div class="mainchip"><p class="mainlabel">Frontend</p></div>
+                        <div class="chip"><p class="label">#css</p></div>
+                        <div class="chip"><p class="label">#layout</p></div>
+                    </div>
+                </div>
+                <div class="posttime"><p>5 min</p></div>
+            </div>
+
+            <div class="postrow">
+                <div class="postdate"><p>2026.04.07</p></div>
+                <div class="contentcol">
+                    <div class="contecttitle"><p>Vibe coding 다음 단계 — 워크플로우 만들기</p></div>
+                    <div class="contectdesc"><p>Beyond vibe coding</p></div>
+                    <div class="tagrow">
+                        <div class="mainchip"><p class="mainlabel">AI</p></div>
+                        <div class="chip"><p class="label">#ai</p></div>
+                        <div class="chip"><p class="label">#workflow</p></div>
+                        <div class="chip"><p class="label">#agents</p></div>
+                    </div>
+                </div>
+                <div class="posttime"><p>12 min</p></div>
+            </div>
+
+            <div class="postrow">
+                <div class="postdate"><p>2026.03.30</p></div>
+                <div class="contentcol">
+                    <div class="contecttitle"><p>React 19 컴파일러로 useMemo를 지웠다</p></div>
+                    <div class="contectdesc"><p>Removing useMemo with React 19</p></div>
+                    <div class="tagrow">
+                        <div class="mainchip"><p class="mainlabel">Performance</p></div>
+                        <div class="chip"><p class="label">#react</p></div>
+                        <div class="chip"><p class="label">#pef</p></div>
+                    </div>
+                </div>
+                <div class="posttime"><p>7 min</p></div>
+            </div>
+
+            <div class="postrow">
+                <div class="postdate"><p>2026.03.22</p></div>
+                <div class="contentcol">
+                    <div class="contecttitle"><p>디자인 토큰을 코드로 옮기는 5가지 방법</p></div>
+                    <div class="contectdesc"><p>Five ways to ship design tokens</p></div>
+                    <div class="tagrow">
+                        <div class="mainchip"><p class="mainlabel">Series · DS</p></div>
+                        <div class="chip"><p class="label">##design-system</p></div>
+                        <div class="chip"><p class="label">#series</p></div>
+                        <div class="chip"><p class="label">#5/8</p></div>
+                    </div>
+                </div>
+                <div class="posttime"><p>9 min</p></div>
+            </div>
+
+        </div>
+
+        <div class="rectangle"></div>
+
+
+    </div>
+</div>
+
 {% endblock %}

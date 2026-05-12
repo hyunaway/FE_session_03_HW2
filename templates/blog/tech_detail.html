@@ -1,7 +1,25 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} 
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/tech_detail.css' %}" /> 
+{% endblock %}
 
 {% block title %}{{ post.title }} · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# TODO: W1 — 본문/TOC/Meta. W2 — 댓글 섹션. #}
+<div class="main">
+    <div class="toclist">
+        <div class="onthispage"><p>ON THIS PAGE</p></div>
+        <div classs="items">
+            
+        </div>
+    </div>
+
+    <div class="article"></div>
+
+    <div class="metaSidebar"></div>
+</div>
+
 {% endblock %}
+
