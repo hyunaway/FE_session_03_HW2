@@ -18,7 +18,9 @@
       <p class="hero-text">아기사자(BL)가 매일 조금씩 적어가는 노트입니다.<br>기술, 프로젝트, 그리고 평범한 하루의 단상까지 — 천천히 쌓아 둡니다.</p>
       <div class="spacer1"></div>
       <div class="hero-button">
-        <a href="#" class="recent"><span class="recent-text">최신 글 읽기 →</span></a>
+        <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="recent">
+        <span class="recent-text">최신 글 읽기 →</span>
+        </a>
         <a href="#" class="about"><span class="about-text">about</span></a>
         <a href="#" class="rss"><span class="rss-text">RSS</span></a>
       </div>
@@ -40,7 +42,7 @@
           <p class="frame-num">01</p>
           <p class="frame-text">오늘의 노트</p>
         </div>
-        <p class="see-all">see all →</p>
+        <a href="{% url 'tech_list' %}" class="see-all">see all →</a>
       </div>
       <div class="note-grid">
         <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="featuredpost-link">

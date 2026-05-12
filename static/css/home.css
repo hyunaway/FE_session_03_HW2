@@ -102,6 +102,15 @@ background: var(--beige-accent-default, #E8794A);
 text-decoration: none;
 width: 121px;
 height: 42px;
+transition: transform 0.2s ease;
+}
+
+.recent:hover {
+transform: scale(0.98);
+}
+
+.recent:active {
+transform: scale(0.98);
 }
 
 .recent-text { /* 최신 글 읽기 폰트 */
@@ -124,6 +133,11 @@ border: 1px solid var(--beige-line-strong, #B59C82);
 text-decoration: none;
 width: 72px;
 height: 42px;
+transition: transform 0.2s ease;
+}
+
+.about:hover {
+  transform: scale(0.98);
 }
 
 .about-text {
@@ -273,6 +287,9 @@ font-style: normal;
 font-weight: 400;
 line-height: 100%; /* 12px */
 height: 12px;
+text-decoration: none;
+color: var(--beige-ink-3, #8A6A55);
+transition: transform 0.2s ease;
 }
 
 .note-grid {
@@ -294,6 +311,12 @@ border-radius: var(--radius-lg, 12px);
 border: 1px solid var(--beige-line-default, #D9C7A8);
 background: var(--beige-bg-paper, #FBF6EC);
 overflow: hidden;
+transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.featuredpost:hover {
+transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(58, 36, 25, 0.05), 0 8px 20px rgba(58, 36, 25, 0.08);
 }
 
 .placeholderimg {
@@ -472,6 +495,11 @@ flex-direction: column;
 align-items: flex-start;
 gap: 4px;
 border-bottom: 1px solid var(--beige-line-default, #D9C7A8);
+transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.postmini:hover {
+color: var(--beige-accent-ink, #8C3A19);
 }
 
 .postmini:nth-child(7) {
