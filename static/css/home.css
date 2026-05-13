@@ -12,7 +12,6 @@ a {
 
 .hero-section {
 display: flex;
-width: 1280px;
 height: 510px;
 padding: 88px 56px 56px 56px;
 flex-direction: column;
@@ -222,7 +221,6 @@ line-height: 160%; /* 22.4px */
 
 .note-section {
 display: flex;
-width: 1280px;
 height: 555px;
 padding: 32px 56px;
 flex-direction: column;
@@ -288,7 +286,6 @@ font-weight: 400;
 line-height: 100%; /* 12px */
 height: 12px;
 text-decoration: none;
-color: var(--beige-ink-3, #8A6A55);
 transition: transform 0.2s ease;
 }
 
@@ -341,8 +338,6 @@ width: 174px;
 height: 11px;
 }
 
-/* 커버 글씨까지 완료! */
-
 .content {
 display: flex;
 width: 660px;
@@ -384,6 +379,12 @@ letter-spacing: 0.24px;
 width: 54px;
 height: 12px;
 text-align: center;
+
+display: flex;
+align-items: center;
+justify-content: center;
+line-height: 100%;
+
 }
 
 .con-chip2 {
@@ -396,6 +397,10 @@ border-radius: 999px;
 border: 1px solid var(--beige-line-strong, #B59C82);
 width: 87px;
 height: 20px;
+display: flex;
+align-items: center;
+justify-content: center;
+line-height: 100%;
 }
 
 .cchip2-text {
@@ -498,7 +503,7 @@ border-bottom: 1px solid var(--beige-line-default, #D9C7A8);
 transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.postmini:hover {
+.post-text:hover {
 color: var(--beige-accent-ink, #8C3A19);
 }
 
@@ -515,10 +520,12 @@ gap: 8px;
 .post-chip {
 display: flex;
 padding: 4px 10px;
-align-items: flex-start;
 gap: 4px;
 border-radius: 999px;
 background: var(--beige-accent-soft, #F8DCCA);
+align-items: center;
+justify-content: center;
+line-height: 100%;
 }
 
 .pchip-text {
@@ -538,6 +545,7 @@ font-size: 12px;
 font-style: normal;
 font-weight: 400;
 line-height: 100%; /* 12px */
+transition: color 0.2s ease;
 }
 
 .post-text {
@@ -548,4 +556,5 @@ font-size: 14px;
 font-style: normal;
 font-weight: 600;
 line-height: 160%; /* 22.4px */
+transition: color 0.2s ease;
 }
