@@ -28,104 +28,28 @@
 
         <div class="categoryfilter">
             <div class="mainchip">All</div>
-            <div class="chip">Frontend</div>
-            <div class="chip">TypeScript</div>
-            <div class="chip">AI</div>
-            <div class="chip">Performance</div>
-            <div class="chip">Series · DS</div>
+            {% for category in categories %}
+            <div class="chip">{{ category.label }}</div>
+            {% endfor %}
         </div>
 
         <div class="postlist">
-            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
-                <div class="postdate">2026.04.28</div>
+            {% for post in posts %}
+            <a href="{{ post.get_absolute_url }}" class="postrow">
+                <div class="postdate">{{ post.published_at|date:"Y.m.d" }}</div>
                 <div class="contentcol">
-                    <div class="contecttitle">손에 익는 디자인 시스템 만들기</div>
-                    <div class="contectdesc">Designing a system that fits the hand</div>
+                    <div class="contecttitle">{{ post.title }}</div>
+                    <div class="contectdesc">{{ post.subtitle }}</div>
                     <div class="tagrow">
-                        <div class="mainchip">Frontend</div>
-                        <div class="chip">#design-system</div>
-                        <div class="chip">#tokens</div>
-                        <div class="chip">#CSS</div>
+                        <div class="mainchip">{{ post.category.label }}</div>
+                        {% for tag in post.tags.all %}
+                        <div class="chip">#{{ tag.label }}</div>
+                        {% endfor %}
                     </div>
                 </div>
-                <div class="posttime">8 min</div>
+                <div class="posttime">{{ post.read_minutes }} min</div>
             </a>
-
-            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
-                <div class="postdate">2026.04.21</div>
-                <div class="contentcol">
-                    <div class="contecttitle">tRPC와 함께한 1년: 좋았던 것, 불편했던 것</div>
-                    <div class="contectdesc">A year with tRPC</div>
-                    <div class="tagrow">
-                        <div class="mainchip">TypeScript</div>
-                        <div class="chip">#trpc</div>
-                        <div class="chip">#types</div>
-                        <div class="chip">#dx</div>
-                    </div>
-                </div>
-                <div class="posttime">6 min</div>
-            </a>
-
-            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
-                <div class="postdate">2026.04.14</div>
-                <div class="contentcol">
-                    <div class="contecttitle">CSS Container Queries, 결국 쓰게 되더라</div>
-                    <div class="contectdesc">I came around to container queries</div>
-                    <div class="tagrow">
-                        <div class="mainchip">Frontend</div>
-                        <div class="chip">#css</div>
-                        <div class="chip">#layout</div>
-                    </div>
-                </div>
-                <div class="posttime">5 min</div>
-            </a>
-
-            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
-                <div class="postdate">2026.04.07</div>
-                <div class="contentcol">
-                    <div class="contecttitle">Vibe coding 다음 단계 — 워크플로우 만들기</div>
-                    <div class="contectdesc">Beyond vibe coding</div>
-                    <div class="tagrow">
-                        <div class="mainchip">AI</div>
-                        <div class="chip">#ai</div>
-                        <div class="chip">#workflow</div>
-                        <div class="chip">#agents</div>
-                    </div>
-                </div>
-                <div class="posttime">12 min</div>
-            </a>
-
-            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
-                <div class="postdate">2026.03.30</div>
-                <div class="contentcol">
-                    <div class="contecttitle">React 19 컴파일러로 useMemo를 지웠다</div>
-                    <div class="contectdesc">Removing useMemo with React 19</div>
-                    <div class="tagrow">
-                        <div class="mainchip">Performance</div>
-                        <div class="chip">#react</div>
-                        <div class="chip">#pef</div>
-                    </div>
-                </div>
-                <div class="posttime">7 min</div>
-            </a>
-
-            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="postrow">
-                <div class="postdate">2026.03.22</div>
-                <div class="contentcol">
-                    <div class="contecttitle">디자인 토큰을 코드로 옮기는 5가지 방법</div>
-                    <div class="contectdesc">Five ways to ship design tokens</div>
-                    <div class="tagrow">
-                        <div class="mainchip">Series · DS</div>
-                        <div class="chip">##design-system</div>
-                        <div class="chip">#series</div>
-                        <div class="chip">#5/8</div>
-                    </div>
-                </div>
-                <div class="posttime">9 min</div>
-            </a>
-
-        </div>
-
+            {% endfor %}
         <div class="rectangle"></div>
 
     </div>

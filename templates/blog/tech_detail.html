@@ -34,25 +34,34 @@
 
     <div class="article">
         <div class="metatop">
-            <div class="mainchip">Frontend</div>
-            <div class="infor">2026.04.28 · 8 min · series 5/8</div>
+            <div class="mainchip">{{ post.category.label }}</div>
+            <div class="infor">{{ post.published_at | date:"Y.m.d" }} · {{ post.read_minutes }} min · {{ post.series_label }}</div>
         </div>
-        <div class="artititle">손에 익는 디자인 시스템 만들기</div>
+        <div class="artititle">{{ post.title }}</div>
         <div class="artisub">Designing a system that fits the hand — tokens, units, and the boring middle.</div>
+        
         <div class="notedivider">
             <div class="line"></div>
         </div>
-        <div class="infor1">디자인 시스템을 처음 만들 때, 저는 컴포넌트부터 시작했어요. 버튼, 카드, 입력 필드. 그러다 알았죠. <span>토큰이 없는 컴포넌트는 짐</span>이라는 걸요.</div>
-        
-        <div class="tokentitle">1. 토큰이란</div>
-        <div class="tokeninfor">토큰은 디자인 결정에 이름을 붙이는 일이에요. <span>--accent</span>는 "주황색"이 아니라 "강조되는 무엇"을 의미하죠.</div>
-        <div class="codeblock">
-  <pre class="code"><code>:root {
-  --accent: #E8794A;       /* terracotta · primary */
-  --accent-hover: #C95A2C; /* deeper rust */
-  --bg-page: #F5EDE0;      /* page · soft beige */
-}</code></pre>
-</div>
+
+        {% for section in sections|slice:":5" %}
+        {% if section.kind == "p" %}
+            <div class="infor1">
+                {{ section.text }}
+            </div>
+
+        {% elif section.kind == "h2" %}
+            <div class="tokentitle" id="{{ section.anchor }}">
+                1. {{ section.text }}
+            </div>
+
+        {% elif section.kind == "code" %}
+            <div class="codeblock">
+                <pre class="code"><code>{{ section.text }}</code></pre>
+            </div>
+        {% endif %}
+        {% endfor %}
+
         <div class="tokeninfor2">이름을 잘 붙이면, 색을 바꾸는 일이 의미를 바꾸는 일이 됩니다. 그게 시스템이에요.</div>
         
         <div class="notedivider">
@@ -114,17 +123,17 @@
 
             <div class="metarow">
                 <div class="author">edited</div>
-                <div class="babylion">2026.04.29</div>
+                <div class="babylion">{{ post.edited_at|date:"Y.m.d" }}</div>
             </div>
 
             <div class="metarow">
                 <div class="author">views</div>
-                <div class="babylion">1,284</div>
+                <div class="babylion">{{ post.views }}</div>
             </div>
 
             <div class="metarow">
                 <div class="author">license</div>
-                <div class="babylion">CC BY 4.0</div>
+                <div class="babylion">{{ post.license }}</div>
             </div>
 
         </div>
