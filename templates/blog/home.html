@@ -74,13 +74,13 @@
           <div class="spacer3"></div>
 
           {% for other in others %}
-          <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="featuredpost-link">
+          <a href="{{ other.get_absolute_url }}" class="featuredpost-link">
             <div class="postmini">
               <div class="post-frame">
                 <div class="post-chip">
                   <div class="pchip-text">{{ other.category.label }}</div>
                 </div>
-                <div class="post-date"><p>{{ other.published_at | date:"m.d" }}</p></div>
+                <div class="post-date"><p>{{ other.published_at |date:"m.d" }}</p></div>
               </div>
               <div class="post-text"><p>{{ other.title }}</p></div>
             </div>

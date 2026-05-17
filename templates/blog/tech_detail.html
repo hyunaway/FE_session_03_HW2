@@ -12,23 +12,15 @@
     <div class="toclist">
         <div class="onthispage"><p>ON THIS PAGE</p></div>
         <div class="items">
-
-            <div class="tocitem">
-                <div class="topitem"><p>1. 토큰이란</p></div>
-            </div>
-
-            <div class="tocitem">
-                <div class="item"><p>2. 단위 결정</p></div>
-            </div>
-
-            <div class="tocitem">
-                <div class="item"><p>3. 빌드 파이프라인</p></div>
-            </div>
-
-            <div class="tocitem">
-                <div class="item"><p>4. 마무리</p></div>
-            </div>
-
+        {% for section in sections %}
+            {% if section.kind == "h2" %}
+                <div class="tocitem">
+                    <div class="item">
+                        <p>{{ section.text }}</p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
         </div>
     </div>
 
@@ -38,7 +30,7 @@
             <div class="infor">{{ post.published_at | date:"Y.m.d" }} · {{ post.read_minutes }} min · {{ post.series_label }}</div>
         </div>
         <div class="artititle">{{ post.title }}</div>
-        <div class="artisub">Designing a system that fits the hand — tokens, units, and the boring middle.</div>
+        <div class="artisub">{{ post.subtitle}}</div>
         
         <div class="notedivider">
             <div class="line"></div>
@@ -62,7 +54,7 @@
         {% endif %}
         {% endfor %}
 
-        <div class="tokeninfor2">이름을 잘 붙이면, 색을 바꾸는 일이 의미를 바꾸는 일이 됩니다. 그게 시스템이에요.</div>
+        
         
         <div class="notedivider">
             <div class="line"></div>
