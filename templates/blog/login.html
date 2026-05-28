@@ -1,7 +1,54 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}" /> 
+{% endblock %}
 
 {% block title %}로그인 · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# TODO: W3 — 아기 사자 작성 영역 #}
+<div class="main">
+    <div class="card">
+        <div class="header">
+            <div class="login">LOGIN · 로그인</div>
+            <div class="welcome_title">다시 오셨네요.</div>
+            <div class="welcome_comment">Welcome back. Sign in to leave notes and comments.</div>
+        </div>
+
+        <div class="notedivider">
+            <div class="line"></div>
+        </div>
+
+        <form action="{% url 'login' %}" method="post" class="form">
+            {% csrf_token %}
+            <div class="textfield">
+                <label class="input-label" for="user-id">ID</label>
+                <input class="input" type="text" id="user-id" name="user-id" placeholder="babyLion" required>
+            </div>
+
+            <div class="textfield">
+                <label class="input-label" for="user-password">PASSWORD</label>
+                <input class="input" type="password" id="user-password" name="user-password" placeholder="••••••••" required>
+            </div>
+
+            <div class="forgotrow">
+                <div class="forgot_text">forgot password?</div>
+            </div>
+
+            <div class="rememberrow">
+                <input class="checkbox" type="checkbox" id="remember" name="remember" required>
+                <div class="remember_text">Remember me on this paper</div>
+            </div>
+
+            <button class="button" type="submit">Sign in →</button>
+
+            <div class="signup-text">
+                <span>처음이신가요?</span>
+                <a href="{% url 'signup' %}" class="signup-link">Create an account</a>
+            </div>
+
+        </form>
+    </div>
+</div>
 {% endblock %}

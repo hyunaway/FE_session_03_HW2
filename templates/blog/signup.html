@@ -1,7 +1,59 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}" /> 
+{% endblock %}
 
 {% block title %}회원가입 · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# TODO: W3 — 아기 사자 작성 영역 #}
+<div class="main">
+    <div class="card">
+        <div class="header">
+            <div class="signup">SIGN UP · 회원가입</div>
+            <div class="sign_title">처음 오셨네요<span class="dot">.</span></div>
+            <div class="sign_comment">Make a paper to leave notes, save posts, and join the conversation.</div>
+        </div>
+
+        <div class="notedivider">
+            <div class="line"></div>
+        </div>
+
+        <form action="{% url 'signup' %}" method="post" class="form">
+            {% csrf_token %}
+            <div class="textfield">
+                <label class="input-label" for="user-name">NAME · 이름</label>
+                <input class="input" type="text" id="user-name" name="user-name" placeholder="Like Lion" required>
+            </div>
+
+            <div class="textfield">
+                <label class="input-label" for="user-id">ID</label>
+                <input class="input" type="text" id="user-id" name="user-id" placeholder="babyLion" required>
+            </div>
+
+            <div class="textfield">
+                <label class="input-label" for="user-password">PASSWORD</label>
+                <input class="input" type="text" id="user-password" name="user-password" placeholder="8자 이상, 영문/숫자 포함" required>
+            </div>
+
+            <div class="termsrow">
+                <input class="checkbox" type="checkbox" id="remember" name="remember" required>
+                <div class="agree_text"><span>이용약관</span>과 <span>개인정보 처리방침</span>에 동의합니다.
+                    <br>I agree to the <span>Terms</span> and <span>Privacy Policy</span>.</div>
+            </div>
+
+            <button class="button">
+                <div class="account">Create account →</div>
+            </button>
+
+        </form>
+
+        <div class="login-text">
+            <span>이미 계정이 있으신가요?</span>
+            <a href="{% url 'login' %}" class="login-link">Sign in</a>
+        </div>
+
+    </div>
+</div>
 {% endblock %}
