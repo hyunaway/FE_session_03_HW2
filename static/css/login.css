@@ -170,7 +170,7 @@ justify-content: center;
 align-items: center;
 
 border-radius: 3px;
-background: var(--beige-accent-default, #E8794A);
+accent-color: var(--beige-accent-default, #E8794A);
 }
 
 .check {
