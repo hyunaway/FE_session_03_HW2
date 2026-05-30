@@ -23,27 +23,29 @@
         <form action="{% url 'signup' %}" method="post" class="form">
             {% csrf_token %}
             <div class="textfield">
-                <label class="input-label" for="user-name">NAME · 이름</label>
-                <input class="input" type="text" id="user-name" name="user-name" placeholder="Like Lion" required>
+                <label class="input-label" for="name">NAME · 이름</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Like Lion" required>
             </div>
 
             <div class="textfield">
-                <label class="input-label" for="user-id">ID</label>
-                <input class="input" type="text" id="user-id" name="user-id" placeholder="babyLion" required>
+                <label class="input-label" for="username">ID</label>
+                <input class="input" type="text" id="username" name="username" placeholder="babyLion" required>
             </div>
 
             <div class="textfield">
-                <label class="input-label" for="user-password">PASSWORD</label>
-                <input class="input" type="text" id="user-password" name="user-password" placeholder="8자 이상, 영문/숫자 포함" required>
+                <label class="input-label" for="password">PASSWORD</label>
+                <input class="input" type="password" id="password" name="password" placeholder="8자 이상, 영문/숫자 포함" required>
             </div>
 
             <div class="termsrow">
-                <input class="checkbox" type="checkbox" id="remember" name="remember" required>
-                <div class="agree_text"><span>이용약관</span>과 <span>개인정보 처리방침</span>에 동의합니다.
-                    <br>I agree to the <span>Terms</span> and <span>Privacy Policy</span>.</div>
+                <input class="checkbox" type="checkbox" id="agree" name="agree" required>
+                <div class="agree_text">
+                    <span>이용약관</span>과 <span>개인정보 처리방침</span>에 동의합니다.
+                    <br>I agree to the <span>Terms</span> and <span>Privacy Policy</span>.
+                </div>
             </div>
 
-            <button class="button">
+            <button class="button" type="submit">
                 <div class="account">Create account →</div>
             </button>
 

@@ -165,7 +165,7 @@ align-items: center;
 
 border-radius: var(--radius-sm, 4px);
 border: 1px solid var(--beige-accent-default, #E8794A);
-background: var(--beige-accent-default, #E8794A);
+accent-color: var(--beige-accent-default, #E8794A);
 }
 
 .check {
