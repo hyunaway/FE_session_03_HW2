@@ -73,14 +73,8 @@
         </div>
 
         <div class="prompttext">
-            <div class="needlogin">{{ user.first_name|default:user.username }}</div>
-            <input 
-                class="write" 
-                type="text" 
-                name="body" 
-                placeholder="댓글을 남겨 주세요..." 
-                required
-            >
+            <div class="needpost">{{ user.first_name|default:user.username }}</div>
+            <input class="write" type="text" name="body" placeholder="댓글을 남겨 주세요..." required>
         </div>
 
         <button class="button" type="submit">
@@ -88,7 +82,7 @@
         </button>
     </form>
     {% else %}
-    {% comment %} 비로그인 {% endcomment %}
+    {% comment %} 비로그인 상태 {% endcomment %}
     <div class="signinprompt">
         <div class="prompttext">
             <div class="needlogin">댓글을 남기려면 로그인이 필요해요</div>

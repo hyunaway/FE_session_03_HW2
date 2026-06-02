@@ -258,6 +258,39 @@ gap: 2px;
 flex: 1 0 0;
 }
 
+.needpost {
+width: 52px;
+color: var(--beige-ink-1, #3A2419);
+
+/* Body/Small Bold */
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 160%; /* 22.4px */
+}
+
+.write {
+width: 111px;
+
+border: none;
+outline: none;
+background: transparent;
+padding: 0;
+
+/* Body/Small Meta */
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%; /* 20.8px */
+}
+
+.write::placeholder {
+  color: var(--beige-ink-3, #8A6A55);
+  opacity: 1;
+}
+
 .needlogin {
 color: var(--beige-ink-1, #3A2419);
 
@@ -348,7 +381,6 @@ line-height: 160%; /* 22.4px */
 }
 
 .write {
-width: 111px;
 color: var(--beige-ink-3, #8A6A55);
 font-family: Inter;
 font-size: 13px;
