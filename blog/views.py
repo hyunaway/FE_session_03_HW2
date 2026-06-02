@@ -176,6 +176,7 @@ def _parse_body(body: str):
                 'kind': 'h2',
                 'text': line[3:].strip(),
                 'anchor': f'sec-{h2_count}',
+                'number': h2_count,
             })
             continue
         if line.strip() == '':
